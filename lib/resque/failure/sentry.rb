@@ -33,7 +33,7 @@ module Resque
           'Arguments' => payload['args']
         }
         options[:hint] = { background: false }
-        ::Sentry.capture_exception(exception, options)
+        ::Sentry.capture_exception(exception, **options)
       end
 
       def self.count(_queue = nil, _class_name = nil)
